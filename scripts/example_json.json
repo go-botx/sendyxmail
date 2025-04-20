@@ -1,0 +1,46 @@
+{
+  "to": "user@example.com",
+  "body": "Remember to watch new movies!\n\n**Choose yours**",
+  "buttons": [
+    [
+      {
+        "label": "Disney ✨",
+        "background_color": "#4a62d8",
+        "h_size": 5,
+        "link": "https://disney.com",
+        "text_color": "#fbbe4f",
+        "text_align": "left",
+        "alert_text": "💣💥Warning! Disney remakes can ruin your childhood memories!"
+      },
+      {
+        "label": "DreamWorks 🌙",
+        "background_color": "#052c6f",
+        "h_size": 7,
+        "link": "https://dreamworks.com",
+        "text_color": "#ffffff",
+        "text_align": "center",
+        "alert_text": "From 👹Shrek to 🌈Trolls"
+      },
+      {
+        "label": "🐭 WB 🐈",
+        "background_color": "#e1393e",
+        "h_size": 4,
+        "link": "https://www.warnerbros.com/",
+        "text_color": "#000000",
+        "text_align": "right",
+        "alert_text": "Lego, Tom&Jerry, Looney Tunes, ..."
+      }
+    ],
+    [
+      {
+        "label": "Illumination 🧞",
+        "background_color": "#fcb900",
+        "h_size": 9,
+        "link": "https://www.illumination.com/",
+        "text_color": "#0693e3",
+        "text_align": "center",
+        "alert_text": "Minions, MINIONS everywhere!"
+      }
+    ]
+  ]
+}
