@@ -1,7 +1,7 @@
 package main
 
-const appVersion = "0.0.1b"
-const appName = "sendyxmail"
+const appVersion = "0.0.1c"
+const appName = "SendyXMail"
 
 func AppVersion() string {
 	return appVersion
