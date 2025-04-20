@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"slices"
 	"strings"
@@ -50,6 +51,13 @@ func NewCommandHandler() bot.CommandCallbackHandler {
 					}
 					b.SendMessageAsync(message)
 				}
+			}
+			if command == commandChatAddr.Body && req.From.IsAdmin {
+				message, err := models.NewNDRequest(chatId, fmt.Sprintf(getLocalizedMessage(req.From.Locale, "show_chat_addr"), fmt.Sprintf("%s@%s", chatId.String(), groupChatMailSuffix)))
+				if err != nil {
+					return
+				}
+				b.SendMessageAsync(message)
 			}
 		}
 

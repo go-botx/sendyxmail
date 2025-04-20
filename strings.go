@@ -9,6 +9,7 @@ var (
 		"ru-unmuted":             "Я буду доставлять сообщения в этот чат.",
 		"ru-not_changed_muted":   "Я уже отключен.",
 		"ru-not_changed_unmuted": "Я доставлю сообщения в этот чат как только их кто-то отправит.",
+		"ru-show_chat_addr":      "Адрес данного чата для отправки сообщений через бота: `%s`",
 		"ru-error":               "Что-то пошло не так...",
 
 		"en-not_admin":           "Only chat admins can control me.",
@@ -16,6 +17,7 @@ var (
 		"en-unmuted":             "I started delivering messages to this chat.",
 		"en-not_changed_muted":   "I already stopped delivering messages to this chat.",
 		"en-not_changed_unmuted": "I will deliver messages to this chat as soon as someone sends them.",
+		"en-show_chat_addr":      "The address of this chat for sending messages via the bot: `%s`",
 		"en-error":               "Something is wrong...",
 	}
 )

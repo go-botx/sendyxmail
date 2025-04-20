@@ -12,4 +12,8 @@ var (
 		Body:        "/unmute",
 		Description: "Unmute notifications in this chat 🔔",
 	}
+	commandChatAddr = models.StatusResponseCommand{
+		Body:        "/_address",
+		Description: "Get address for current chat",
+	}
 )
