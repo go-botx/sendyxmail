@@ -53,7 +53,7 @@ func NewCommandHandler() bot.CommandCallbackHandler {
 				}
 			}
 			if command == commandChatAddr.Body && req.From.IsAdmin {
-				message, err := models.NewNDRequest(chatId, fmt.Sprintf(getLocalizedMessage(req.From.Locale, "show_chat_addr"), fmt.Sprintf("%s@%s", chatId.String(), groupChatMailSuffix)))
+				message, err := models.NewNDRequest(chatId, fmt.Sprintf(getLocalizedMessage(req.From.Locale, "show_chat_addr"), fmt.Sprintf("%s%s", chatId.String(), groupChatMailSuffix)))
 				if err != nil {
 					return
 				}
