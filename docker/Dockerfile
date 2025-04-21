@@ -1,5 +1,5 @@
 FROM golang:alpine AS builder
-RUN apk update --no-cache && apk add --no-cache ca-certificates
+RUN apk update --no-cache && apk add --no-cache ca-certificates git
 WORKDIR /build
 ADD go.mod .
 ADD go.sum .

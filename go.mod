@@ -3,7 +3,7 @@ module sendymail
 go 1.24.1
 
 require (
-	github.com/go-botx/bot v0.0.0-20250420143442-693cd1e05acb
+	github.com/go-botx/bot v0.0.1
 	github.com/goccy/go-yaml v1.17.1
 	github.com/gofiber/fiber/v2 v2.52.6
 	github.com/google/uuid v1.6.0
