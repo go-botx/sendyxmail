@@ -80,7 +80,7 @@ func main() {
 	}
 
 	if isDebug {
-		botOpts = append(botOpts, bot.WithDebugHTTPClient(), bot.WithDebugHTTPClient())
+		botOpts = append(botOpts, bot.WithDebugHTTPClient(), bot.WithDebugHTTPService())
 	}
 
 	b, err = bot.New(botCreds,
