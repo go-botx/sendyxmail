@@ -7,7 +7,7 @@ import (
 
 func NewStatusHandler() bot.StatusCallbackHandler {
 	return func(b *bot.Bot, req *models.StatusRequest) *models.StatusResponse {
-		if !req.IsAdmin {
+		if req.ChatType != models.ChatTypeChat && !req.IsAdmin {
 			return nil
 		}
 		return models.NewStatusResponse(true, "",
