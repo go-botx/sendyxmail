@@ -2,6 +2,8 @@ github.com/andybalholm/brotli v1.1.1 h1:PR2pgnyFznKEugtsUo0xLdDop5SKXd5Qf5ysW+7X
 github.com/andybalholm/brotli v1.1.1/go.mod h1:05ib4cKhjx3OQYUY22hTVd34Bc8upXjOLL2rKwwZBoA=
 github.com/go-botx/bot v0.0.0-20250420121707-fd5e65a9546d h1:6ZgxS+aW9Rh3eK/kwxfWggmbNqqIu7VtjR8Uk8DfYwE=
 github.com/go-botx/bot v0.0.0-20250420121707-fd5e65a9546d/go.mod h1:0uVR8GgJQzfYX/R92sAU2NPY5Et2u2ib2QDjMTKdk48=
+github.com/go-botx/bot v0.0.0-20250420143442-693cd1e05acb h1:OLCS8ShGQNrljMck+oZjj+0W4n432LhbXECSda/7mRA=
+github.com/go-botx/bot v0.0.0-20250420143442-693cd1e05acb/go.mod h1:BdIT4BBuE9RosmlWM5ccLX2UI7qIT1ufdetSYpLElI8=
 github.com/goccy/go-yaml v1.17.1 h1:LI34wktB2xEE3ONG/2Ar54+/HJVBriAGJ55PHls4YuY=
 github.com/goccy/go-yaml v1.17.1/go.mod h1:XBurs7gK8ATbW4ZPGKgcbrY1Br56PdM69F7LkFRi1kA=
 github.com/gofiber/fiber/v2 v2.52.6 h1:Rfp+ILPiYSvvVuIPvxrBns+HJp8qGLDnLJawAu27XVI=

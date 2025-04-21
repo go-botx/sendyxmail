@@ -34,6 +34,8 @@ func main() {
 	tokenFile := getEnvVarOrPanic("TOKEN_FILE", 2, "TOKEN_FILE path must be provided as env variable")
 	muteFile := getEnvVarOrPanic("MUTE_FILE", 2, "MUTE_FILE path must be provided as env variable")
 
+	isDebug := strings.HasPrefix(strings.ToLower(os.Getenv("DEBUG")), "true")
+
 	tm, err = tokenmanager.Run(tokenFile, time.Duration(10*time.Minute))
 	if err != nil {
 		panic(err)
@@ -70,10 +72,19 @@ func main() {
 
 	botStatusHandler := NewStatusHandler()
 	botCommandHandler := NewCommandHandler()
-	b, err = bot.New(botCreds,
+
+	botOpts := []bot.Option{
 		bot.WithDebugHTTPService(),
 		bot.WithStatusHandler(botStatusHandler),
-		bot.WithCommandHandler(botCommandHandler))
+		bot.WithCommandHandler(botCommandHandler),
+	}
+
+	if isDebug {
+		botOpts = append(botOpts, bot.WithDebugHTTPClient(), bot.WithDebugHTTPClient())
+	}
+
+	b, err = bot.New(botCreds,
+		botOpts...)
 	if err != nil {
 		panic(err)
 	}
