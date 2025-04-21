@@ -13,6 +13,8 @@ import (
 func NewCommandHandler() bot.CommandCallbackHandler {
 	return func(b *bot.Bot, req *models.CommandRequest) {
 		chatId := req.From.GroupChatId
+		isAdmin := req.From.IsAdmin || req.From.ChatType == models.ChatTypeChat
+
 		if req.Command.CommandType == models.CommandTypeUser {
 			bodyParts := strings.SplitN(strings.TrimSpace(strings.ToLower(req.Command.Body)), " ", 2)
 			if len(bodyParts) < 1 {
@@ -21,7 +23,7 @@ func NewCommandHandler() bot.CommandCallbackHandler {
 			command := bodyParts[0]
 			if slices.Contains([]string{commandMute.Body, commandUnmute.Body}, command) {
 				responseString := ""
-				if !req.From.IsAdmin {
+				if !isAdmin {
 					responseString = "not_admin"
 				} else {
 					changed, err := mm.SetMute(chatId.String(), command == commandMute.Body)
@@ -52,7 +54,7 @@ func NewCommandHandler() bot.CommandCallbackHandler {
 					b.SendMessageAsync(message)
 				}
 			}
-			if command == commandChatAddr.Body && req.From.IsAdmin {
+			if command == commandChatAddr.Body && isAdmin {
 				message, err := models.NewNDRequest(chatId, fmt.Sprintf(getLocalizedMessage(req.From.Locale, "show_chat_addr"), fmt.Sprintf("%s%s", chatId.String(), groupChatMailSuffix)))
 				if err != nil {
 					return
