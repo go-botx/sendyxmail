@@ -33,6 +33,10 @@ func main() {
 	metadataSecret := getEnvVarOrPanic("METADATA_SECRET", 20, "METADATA_SECRET must be provided as env variable and must be at least 20 characters")
 	tokenFile := getEnvVarOrPanic("TOKEN_FILE", 2, "TOKEN_FILE path must be provided as env variable")
 	muteFile := getEnvVarOrPanic("MUTE_FILE", 2, "MUTE_FILE path must be provided as env variable")
+	port := "8000"
+	if envPort, ok := os.LookupEnv("PORT"); ok {
+		port = envPort
+	}
 
 	isDebug := strings.HasPrefix(strings.ToLower(os.Getenv("DEBUG")), "true")
 
@@ -103,7 +107,7 @@ func main() {
 	}))
 
 	go func() {
-		if err := app.Listen(":8000"); err != nil {
+		if err := app.Listen(":" + port); err != nil {
 			log.Panic(err)
 		}
 	}()
