@@ -1,4 +1,4 @@
-module sendymail
+module sendyxmail
 
 go 1.24.1
 
