@@ -14,7 +14,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/go-botx/bot"
+	"github.com/go-botx/botx"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
@@ -68,22 +68,22 @@ func main() {
 		DisablePreParseMultipartForm: true,
 	})
 
-	var b *bot.Bot
+	var b *botx.Bot
 
 	botStatusHandler := NewStatusHandler()
 	botCommandHandler := NewCommandHandler()
 
-	botOpts := []bot.Option{
-		bot.WithDebugHTTPService(),
-		bot.WithStatusHandler(botStatusHandler),
-		bot.WithCommandHandler(botCommandHandler),
+	botOpts := []botx.Option{
+		botx.WithDebugHTTPService(),
+		botx.WithStatusHandler(botStatusHandler),
+		botx.WithCommandHandler(botCommandHandler),
 	}
 
 	if isDebug {
-		botOpts = append(botOpts, bot.WithDebugHTTPClient(), bot.WithDebugHTTPService())
+		botOpts = append(botOpts, botx.WithDebugHTTPClient(), botx.WithDebugHTTPService())
 	}
 
-	b, err = bot.New(botCreds,
+	b, err = botx.New(botCreds,
 		botOpts...)
 	if err != nil {
 		panic(err)

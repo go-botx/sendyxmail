@@ -1,6 +1,6 @@
 package main
 
-import "github.com/go-botx/bot/models"
+import "github.com/go-botx/botx/models"
 
 var (
 	// Command body MUST be lowercase

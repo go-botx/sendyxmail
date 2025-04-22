@@ -8,8 +8,8 @@ import (
 	"net/mail"
 	"strings"
 
-	"github.com/go-botx/bot"
-	"github.com/go-botx/bot/models"
+	"github.com/go-botx/botx"
+	"github.com/go-botx/botx/models"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 )
@@ -18,7 +18,7 @@ type CheckBearerTokenFunc func(token string) error
 type CheckAllowedSendFunc func(ident string) error
 
 type APIConfig struct {
-	Bot                      *bot.Bot
+	Bot                      *botx.Bot
 	GroupChatMailSuffix      string
 	CheckBearerToken         CheckBearerTokenFunc
 	MetadataEncryptionSecret string

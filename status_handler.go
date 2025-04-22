@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/go-botx/bot"
-	"github.com/go-botx/bot/models"
+	"github.com/go-botx/botx"
+	"github.com/go-botx/botx/models"
 )
 
-func NewStatusHandler() bot.StatusCallbackHandler {
-	return func(b *bot.Bot, req *models.StatusRequest) *models.StatusResponse {
+func NewStatusHandler() botx.StatusCallbackHandler {
+	return func(b *botx.Bot, req *models.StatusRequest) *models.StatusResponse {
 		if req.ChatType != models.ChatTypeChat && !req.IsAdmin {
 			return nil
 		}

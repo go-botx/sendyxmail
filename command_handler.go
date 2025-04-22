@@ -6,12 +6,12 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/go-botx/bot"
-	"github.com/go-botx/bot/models"
+	botx "github.com/go-botx/botx"
+	"github.com/go-botx/botx/models"
 )
 
-func NewCommandHandler() bot.CommandCallbackHandler {
-	return func(b *bot.Bot, req *models.CommandRequest) {
+func NewCommandHandler() botx.CommandCallbackHandler {
+	return func(b *botx.Bot, req *models.CommandRequest) {
 		chatId := req.From.GroupChatId
 		isAdmin := req.From.IsAdmin || req.From.ChatType == models.ChatTypeChat
 
