@@ -117,7 +117,11 @@
 ```sh
 mkdir -p /opt/sendyxmail-genie
 cd /opt/sendyxmail-genie
-wget https://github.com/go-botx/sendyxmail-docker-compose/archive/refs/heads/main.zip -qO- | unzip -j -
+wget https://github.com/go-botx/sendyxmail-docker-compose/archive/refs/heads/main.zip -O tmp.zip
+# OR CURL:
+curl -L --output tmp.zip https://github.com/go-botx/sendyxmail-docker-compose/archive/refs/heads/main.zip 
+unzip -j tmp.zip
+rm tmp.zip
 mkdir -p mutes certs
 ```
 
