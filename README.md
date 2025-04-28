@@ -117,7 +117,7 @@
 ```sh
 mkdir -p /opt/sendyxmail-genie
 cd /opt/sendyxmail-genie
-git clone --depth 1  https://github.com/go-botx/sendyxmail-docker-compose.git .
+wget https://github.com/go-botx/sendyxmail-docker-compose/archive/refs/heads/main.zip -qO- | unzip -j -
 mkdir -p mutes certs
 ```
 
